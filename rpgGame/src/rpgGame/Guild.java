@@ -56,4 +56,14 @@ public class Guild {
 		}
 		System.out.println("└──────────────┘");
 	}
+	
+	// unitStatus
+	public void unitStatus(int unit) {
+		guildList.get(unit).printStatus();
+	}
+	
+	// unitItem
+	public void unitItem(int unit) {
+		guildList.get(unit).printGetItem();
+	}
 }
