@@ -25,4 +25,8 @@ public class Player extends Unit {
 	public void skill() {
 		
 	}
+	
+	public void guildMenu() {
+		guild.guildMenu();
+	}
 }
