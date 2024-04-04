@@ -47,21 +47,21 @@ public class Guild {
 	
 	// printAllStatus
 	public void printAllStatus() { 
-		System.out.println("┌──────────────┐");
+		System.out.println("┌───────────────────┐");
 		System.out.printf("[골드: %d원]\n", Player.money);
-		System.out.println("─────[길드원]─────");
+		System.out.println("───────[길드원]───────");
 		for(int i = 0; i < guildList.size(); i ++) {
 			Player player = guildList.get(i);
 			System.out.printf("[%d번]", i+1);
 			System.out.printf("[이름:%s]", player.getName());
 			System.out.printf("[레벨:%d]", player.getLevel());
-			System.out.printf("[HP:%d/%d]", player.getHp(), player.getMaxHp());
+			System.out.printf("[HP:%d/%d]\n", player.getHp(), player.getMaxHp());
 			System.out.printf("[공격력:%d]", player.getPower());
 			System.out.printf("[방어력:%d]", player.getDefense());
 			System.out.printf("[파티중:%s]\n", player.getParty());
 			System.out.println();
 		}
-		System.out.println("└──────────────┘");
+		System.out.println("└───────────────────┘");
 	}
 	
 	// unitStatus
@@ -77,7 +77,7 @@ public class Guild {
 	// guildMenu
 	public void guildMenu() {
 		while(true) {
-			System.out.println("─────[길드 관리]─────");
+			System.out.println("───────[길드 관리]───────");
 			System.out.println("① 길드 목록");
 			System.out.println("② 길드원 추가");
 			System.out.println("③ 길드원 삭제");
@@ -130,14 +130,14 @@ public class Guild {
 		
 		// playAdd
 		Player temp = new Player(name, 3, hp, power, defense);
-		System.out.println("┌──────────────┐");
+		System.out.println("┌───────────────────┐");
 		System.out.printf("[이름:%s]", name);
 		System.out.printf("[레벨:%d]", 3);
-		System.out.printf("[HP:%d/%d]", hp, hp);
+		System.out.printf("[HP:%d/%d]\n", hp, hp);
 		System.out.printf("[공격력:%d]", power);
 		System.out.printf("[방어력:%d]\n", defense);
 		System.out.println("길드원을 추가합니다.");
-		System.out.println("└──────────────┘");
+		System.out.println("└───────────────────┘");
 		
 		try {
 			Thread.sleep(1000);
@@ -157,10 +157,10 @@ public class Guild {
 			System.err.println("파티 중인 멤버는 삭제할 수 없습니다.");
 		}
 		else {
-			System.out.println("┌──────────────┐");
+			System.out.println("┌───────────────────┐");
 			System.out.printf("[이름:%s]\n", guildList.get(num).getName());
 			System.out.println("길드원을 삭제합니다.");
-			System.out.println("└──────────────┘");
+			System.out.println("└───────────────────┘");
 			guildList.remove(num);
 		}
 		
@@ -173,19 +173,19 @@ public class Guild {
 	
 	// printParty
 	private void printParty() {
-		System.out.println("┌──────────────┐");
-		System.out.println("─────[파티원]─────");
+		System.out.println("┌───────────────────┐");
+		System.out.println("───────[파티원]───────");
 		for(int i = 0; i < PARTY_SIZE; i ++) {
 			System.out.printf("[%d번]", i+1);
 			System.out.printf("[이름:%s]", partyList[i].getName());
 			System.out.printf("[레벨:%d]", partyList[i].getLevel());
-			System.out.printf("[HP:%d/%d]", partyList[i].getHp(), partyList[i].getMaxHp());
+			System.out.printf("[HP:%d/%d]\n", partyList[i].getHp(), partyList[i].getMaxHp());
 			System.out.printf("[공격력:%d]", partyList[i].getPower());
 			System.out.printf("[방어력:%d]", partyList[i].getDefense());
 			System.out.printf("[파티중:%s]\n", guildList.get(i).getParty());
 			System.out.println();
 		}
-		System.out.println("└──────────────┘");
+		System.out.println("└───────────────────┘");
 	}
 	
 	// partyChange
@@ -199,9 +199,9 @@ public class Guild {
 		partyList[partyNum].setParty(false);
 		guildList.get(guildNum).setParty(true);
 		
-		System.out.println("┌──────────────┐");
-		System.out.printf("[이름:%s] ➡️ [이름:%s]", partyList[partyNum].getName(), guildList.get(guildNum).getName());
-		System.out.println("└──────────────┘");
+		System.out.println("┌───────────────────┐");
+		System.out.printf("[이름:%s] ➡️ [이름:%s]\n", partyList[partyNum].getName(), guildList.get(guildNum).getName());
+		System.out.println("└───────────────────┘");
 		// 파티 재정의
 		int n = 0;
 		for(int i = 0; i < guildList.size(); i ++) {
