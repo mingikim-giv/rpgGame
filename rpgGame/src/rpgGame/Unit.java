@@ -102,4 +102,15 @@ abstract public class Unit {
 			System.out.printf("[장신구:%s]\n", ring);
 		}
 	}
+	
+	// attack
+	public void attack(Monster target) {
+		target.setHp(target.getHp() - power);
+		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", name, target.getName(), power);
+		
+		if(target.getHp() <= 0) {
+			System.out.printf("[%s](를)을 처치했습니다.\n", target.getName());
+			target.setHp(0);
+		}
+	}
 }
