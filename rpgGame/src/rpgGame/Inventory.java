@@ -26,7 +26,7 @@ public class Inventory {
 				wear();
 			}
 			else if(sel == SALE) {
-				
+				sale();
 			}
 			else if(sel == EXIT) {
 				break;
@@ -88,6 +88,25 @@ public class Inventory {
 				play.setRing(itemList.get(wear));
 			}
 			itemList.remove(wear);
+		}
+	}
+	
+	// sale
+	private void sale() {
+		while(true) {
+			printItemList();
+			System.out.printf("[골드: %d원]\n", Player.money);
+			int sel = inputNumber("판매할 아이템 번호 (50% 세금) [0.뒤로가기]")-1;
+			if(sel == -1) {
+				break;
+			}
+			System.out.printf("%s 판매💲\n", itemList.get(sel).getName());
+			
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	// inputNumber
