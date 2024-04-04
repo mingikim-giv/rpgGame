@@ -53,21 +53,20 @@ public class StageSetting extends Stage {
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	// inputNumber
-		private int inputNumber(String message) {
-			int number = -1;
-			
-			try {
-				System.out.println(message + ":");
-				String input = GameManager.scan.next();
-				number = Integer.parseInt(input);
-			} catch (Exception e) {
-				System.out.println("숫자를 입력하세요.");
-			}
-			return number;
+	private int inputNumber(String message) {
+		int number = -1;
+		
+		try {
+			System.out.println(message + ":");
+			String input = GameManager.scan.next();
+			number = Integer.parseInt(input);
+		} catch (Exception e) {
+			System.out.println("숫자를 입력하세요.");
 		}
+		return number;
+	}
 }
