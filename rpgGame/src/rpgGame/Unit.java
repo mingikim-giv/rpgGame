@@ -82,21 +82,21 @@ abstract public class Unit {
 		
 		// HP: hp + ring
 		if(ring != null) {
-			System.out.printf("[HP:%d+%d/%d+%d]", hp, ring, maxHp, ring);
+			System.out.printf("[HP:%d+%d/%d+%d]", hp, ring.getPower(), maxHp, ring.getPower());
 		}
 		else {
 			System.out.printf("[HP:%d/%d]", hp, maxHp);
 		}
 		// power: power + weapon
 		if(weapon != null) {
-			System.out.printf("[공격력:%d+%d]", power, weapon);
+			System.out.printf("[공격력:%d+%d]", power, weapon.getPower());
 		}
 		else {
 			System.out.printf("[공격력:%d]", power);
 		}
 		// defense: defense + armor
 		if(armor != null) {
-			System.out.printf("[방어력:%d+%d]", defense, armor);
+			System.out.printf("[방어력:%d+%d]", defense, armor.getPower());
 		}
 		else {
 			System.out.printf("[방어력:%d]", defense);
