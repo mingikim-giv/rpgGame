@@ -80,4 +80,26 @@ abstract public class Unit {
 		}
 		System.out.printf("[파티중:%s]\n", party);
 	}
+	
+	// getItem
+	public void printGetItem() {
+		if(weapon == null) {
+			System.out.println("[무기:❌]");
+		}
+		else {
+			System.out.printf("[무기:%s]\n", weapon);
+		}
+		if(armor == null) {
+			System.out.println("[방어구:❌]");
+		}
+		else {
+			System.out.printf("[방어구:%s]\n", armor);
+		}
+		if(ring == null) {
+			System.out.println("[장신구:❌]");
+		}
+		else {
+			System.out.printf("[장신구:%s]\n", ring);
+		}
+	}
 }
