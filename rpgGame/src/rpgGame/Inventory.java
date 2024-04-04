@@ -61,13 +61,33 @@ public class Inventory {
 				break;
 			}
 			wear --;
-			
-			if(itemList.get(wear).getKind() == Item.WEAPON) {
-				if(Player.getGuildUnit(wear).getWeapon() != null) {
-					itemList.add(Player.getGuildUnit(wear).getWeapon());
+			Item item = itemList.get(wear);
+			Player play = Player.getGuildUnit(wear);
+			// 입력한 아이템이 무기면
+			if(item.getKind() == Item.WEAPON) {
+				// 길드원에게 무기가 없으면 아이템 리스트 추가 후 무기 착용
+				if(play.getWeapon() != null) {
+					itemList.add(play.getWeapon());
 				}
-				Player.getGuildUnit(wear).setWeapon(itemList.get(sel));
+				play.setWeapon(itemList.get(wear));
 			}
+			// 입력한 아이템이 방어구면
+			else if(item.getKind() == Item.ARMOR) {
+				// 길드원에게 방어구가 없으면 아이템 리스트 추가 후 방어구 착용
+				if(play.getArmor() != null) {
+					itemList.add(play.getArmor());
+				}
+				play.setArmor(itemList.get(wear));
+			}
+			// 입력한 아이템이 장신구면
+			else if(item.getKind() == Item.RING) {
+				// 길드원에게 장신구가 없으면 아이템 리스트 추가 후 장신구 착용
+				if(play.getRing() != null) {
+					itemList.add(play.getRing());
+				}
+				play.setRing(itemList.get(wear));
+			}
+			itemList.remove(wear);
 		}
 	}
 	// inputNumber
