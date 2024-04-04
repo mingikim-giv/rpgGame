@@ -12,7 +12,7 @@ public class StageTitle extends Stage {
 			System.out.println("[시작]을 입력하세요.");
 			start = GameManager.scan.next();
 		}
-		GameManager.nextStage = "로비";
+		GameManager.nextStage = "🏰스톰빌 성 로비🏰";
 		return false;
 	}
 
