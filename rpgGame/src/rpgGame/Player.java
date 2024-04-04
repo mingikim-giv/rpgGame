@@ -2,8 +2,8 @@ package rpgGame;
 
 public class Player extends Unit {
 	public static int money;	// 소지금
-	private static Guild guild;
-	private static Inventory inven;
+	public static Guild guild;
+	public static Inventory inven;
 	
 	public Player() {
 		guild = new Guild();
