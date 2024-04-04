@@ -23,7 +23,7 @@ public class Inventory {
 			int sel = inputNumber("메뉴 선택");
 			
 			if(sel == WEAR) {
-				
+				wear();
 			}
 			else if(sel == SALE) {
 				
@@ -33,7 +33,28 @@ public class Inventory {
 			}
 		}
 	}
-	
+	// printItemList
+	private void printItemList() {
+		System.out.println("─────[아이템 리스트]─────");
+		for(int i = 0; i < itemList.size(); i ++) {
+			System.out.printf("[%d번]", i+1);
+			System.out.printf("[이름:%s]", itemList.get(i).getName());
+			System.out.printf("[능력:%d]", itemList.get(i).getPower());
+			System.out.printf("[가격:%d]", itemList.get(i).getPrice());
+			System.out.println();
+		}
+	}
+	// wear
+	private void wear() {
+		Player.guild.printAllStatus();
+		System.out.println("아이템 착용할 길드원을 선택하세요.");
+		int sel = inputNumber("번호 선택")-1;
+		while(true) {
+			Player.guild.unitStatus(sel);
+			Player.guild.unitItem(sel);
+			printItemList();
+		}
+	}
 	// inputNumber
 	private int inputNumber(String message) {
 		int number = - 1;
