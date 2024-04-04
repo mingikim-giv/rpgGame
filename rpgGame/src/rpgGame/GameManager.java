@@ -12,8 +12,14 @@ public class GameManager {
 	private Map<String, Stage> stageList = new HashMap<String, Stage>();
 	private boolean isRun = true;
 	
-	private static String nextStage = "";
+	public static String nextStage = "";
 	private String curStage = "";
+	
+	public GameManager() {
+		stageList.put("🏰스톰빌 성 정문🏰", new StageTitle());
+		
+		nextStage = "🏰스톰빌 성 정문🏰";
+	}
 	
 	// changeStage
 	private boolean changeStage() {
@@ -51,6 +57,6 @@ public class GameManager {
 				break;
 			}
 		}
-		System.out.println("GAME OVER");
+		System.out.println("게임 종료");
 	}
 }
