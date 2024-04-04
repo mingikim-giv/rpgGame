@@ -6,8 +6,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GameManager {
-	private static Scanner scan = new Scanner(System.in);
-	private static Random ran = new Random();
+	public static Scanner scan = new Scanner(System.in);
+	public static Random ran = new Random();
 	
 	private Map<String, Stage> stageList = new HashMap<String, Stage>();
 	private boolean isRun = true;
