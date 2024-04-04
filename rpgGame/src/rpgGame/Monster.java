@@ -1,6 +1,6 @@
 package rpgGame;
 
-public class Monster {
+abstract public class Monster {
 	private int hp;
 	private int maxHp;
 	private int power;
@@ -33,5 +33,18 @@ public class Monster {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void init(int maxHp, int power) {
+		this.hp = maxHp;
+		this.maxHp = maxHp;
+		this.power = power;
+	}
+	
+	public void init(String name, int maxHp, int power) {
+	    this.name = name;
+	    this.hp = maxHp;
+	    this.maxHp = maxHp;
+	    this.power = power;
 	}
 }
