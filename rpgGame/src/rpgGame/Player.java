@@ -1,5 +1,28 @@
 package rpgGame;
 
-public class Player {
-
+public class Player extends Unit {
+	private static int money;	// 소지금
+	private static Guild guild;
+	private static Inventory inven;
+	
+	public Player() {
+		guild = new Guild();
+		inven = new Inventory();
+	}
+	
+	public void init() {
+		money = 100000;		// 소지금
+		guild.setGuild();	// 길드 설정
+	}
+	
+	public Player(String name, int lv, int maxHp, int pw, int df) {
+		super(name, lv, maxHp, pw, df);
+	}
+	public Player(String name, int lv, int maxHp, int pw, int df, boolean party) {
+		super(name, lv, maxHp, pw, df, false);
+	}
+	
+	public void skill() {
+		
+	}
 }
