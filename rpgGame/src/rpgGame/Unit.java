@@ -113,4 +113,9 @@ abstract public class Unit {
 			target.setHp(0);
 		}
 	}
+	
+	// printData
+	public void printData() {
+		System.out.printf("[%s][HP:%d/%d][공격력:%d]\n", name, hp, maxHp, power);
+	}
 }
