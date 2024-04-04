@@ -16,4 +16,17 @@ public class Item {
 		this.power = power;
 		this.price = price;
 	}
+	
+	public int getKind() {
+		return this.kind;
+	}
+	public int getPower() {
+		return this.power;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public int getPrice() {
+		return this.price;
+	}
 }
