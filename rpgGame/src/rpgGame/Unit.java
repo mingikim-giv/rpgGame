@@ -66,9 +66,21 @@ abstract public class Unit {
 	public Item getWeapon() {
 		return this.weapon;
 	}
+	public Item getArmor() {
+		return this.armor;
+	}
+	public Item getRing() {
+		return this.ring;
+	}
 	
 	public void setWeapon(Item weapon) {
 		this.weapon = weapon;
+	}
+	public void setArmor(Item armor) {
+		this.armor = armor;
+	}
+	public void setRing(Item ring) {
+		this.ring = ring;
 	}
 	public void setHp(int hp) {
 		this.hp = hp;
