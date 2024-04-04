@@ -17,7 +17,9 @@ public class GameManager {
 	
 	public GameManager() {
 		stageList.put("🏰스톰빌 성 정문🏰", new StageTitle());
-		
+		stageList.put("🏰스톰빌 성🏰", new StageBattle());
+		stageList.put("🏰스톰빌 성 로비🏰", new StageLobby());
+		stageList.put("🏰스톰빌 성 신수탑🏰", new StageSetting());
 		nextStage = "🏰스톰빌 성 정문🏰";
 	}
 	
