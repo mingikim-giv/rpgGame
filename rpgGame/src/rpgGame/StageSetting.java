@@ -29,7 +29,7 @@ public class StageSetting extends Stage {
 			}
 			
 			if(sel == GUILDMENU) {
-				
+				unitManager.player.guildMenu();
 			}
 			else if(sel == SHOP) {
 				
