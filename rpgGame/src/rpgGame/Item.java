@@ -1,9 +1,9 @@
 package rpgGame;
 
 public class Item {
-	private static final int WEAPON = 1;
-	private static final int ARMOR = 2;
-	private static final int RING = 3;
+	public static final int WEAPON = 1;
+	public static final int ARMOR = 2;
+	public static final int RING = 3;
 	
 	private int kind;		// 종류
 	private String name;	// 이름
