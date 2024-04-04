@@ -52,12 +52,12 @@ public class Guild {
 		System.out.println("─────[길드원]─────");
 		for(int i = 0; i < guildList.size(); i ++) {
 			Player player = guildList.get(i);
-			System.out.printf("[%d번]\n", i+1);
-			System.out.printf("[이름:%s]\n", player.getName());
-			System.out.printf("[레벨:%d]\n", player.getLevel());
-			System.out.printf("[HP:%d/%d]\n", player.getHp(), player.getMaxHp());
-			System.out.printf("[공격력:%d]\n", player.getPower());
-			System.out.printf("[방어력:%d]\n", player.getDefense());
+			System.out.printf("[%d번]", i+1);
+			System.out.printf("[이름:%s]", player.getName());
+			System.out.printf("[레벨:%d]", player.getLevel());
+			System.out.printf("[HP:%d/%d]", player.getHp(), player.getMaxHp());
+			System.out.printf("[공격력:%d]", player.getPower());
+			System.out.printf("[방어력:%d]", player.getDefense());
 			System.out.printf("[파티중:%s]\n", player.getParty());
 			System.out.println();
 		}
@@ -131,10 +131,10 @@ public class Guild {
 		// playAdd
 		Player temp = new Player(name, 3, hp, power, defense);
 		System.out.println("┌──────────────┐");
-		System.out.printf("[이름:%s]\n", name);
-		System.out.printf("[레벨:%d]\n", 3);
-		System.out.printf("[HP:%d/%d]\n", hp, hp);
-		System.out.printf("[공격력:%d]\n", power);
+		System.out.printf("[이름:%s]", name);
+		System.out.printf("[레벨:%d]", 3);
+		System.out.printf("[HP:%d/%d]", hp, hp);
+		System.out.printf("[공격력:%d]", power);
 		System.out.printf("[방어력:%d]\n", defense);
 		System.out.println("길드원을 추가합니다.");
 		System.out.println("└──────────────┘");
@@ -170,6 +170,24 @@ public class Guild {
 			e.printStackTrace();
 		}
 	}
+	
+	// printParty
+	private void printParty() {
+		System.out.println("┌──────────────┐");
+		System.out.println("─────[파티원]─────");
+		for(int i = 0; i < PARTY_SIZE; i ++) {
+			System.out.printf("[%d번]", i+1);
+			System.out.printf("[이름:%s]", partyList[i].getName());
+			System.out.printf("[레벨:%d]", partyList[i].getLevel());
+			System.out.printf("[HP:%d/%d]", partyList[i].getHp(), partyList[i].getMaxHp());
+			System.out.printf("[공격력:%d]", partyList[i].getPower());
+			System.out.printf("[방어력:%d]", partyList[i].getDefense());
+			System.out.printf("[파티중:%s]\n", guildList.get(i).getParty());
+			System.out.println();
+		}
+		System.out.println("└──────────────┘");
+	}
+	
 	
 	// inputNumber
 	private int inputNumber(String message) {
