@@ -1,7 +1,7 @@
 package rpgGame;
 
 public class Player extends Unit {
-	private static int money;	// 소지금
+	public static int money;	// 소지금
 	private static Guild guild;
 	private static Inventory inven;
 	
