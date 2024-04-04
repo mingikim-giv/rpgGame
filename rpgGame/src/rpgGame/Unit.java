@@ -7,7 +7,6 @@ abstract public class Unit {
 	private int maxHp;		// 최대 체력
 	private int power;		// 공격력
 	private int defense;	// 방어력
-	private int exp;		// 경험치
 	private boolean party;	// 파티 가입 여부
 	private Item weapon;	// 무기
 	private Item armor;		// 갑옷
@@ -15,14 +14,13 @@ abstract public class Unit {
 	
 	public Unit() {}
 	
-	public Unit(String name, int lv, int hp, int pw, int df, int exp) {
+	public Unit(String name, int lv, int hp, int pw, int df) {
 		this.name = name;
 		this.level = lv;
 		this.maxHp = hp;
 		this.hp = hp;
 		this.power = pw;
 		this.defense = df;
-		this.exp = exp;
 		party = false;
 		weapon = null;
 		armor = null;
@@ -30,7 +28,7 @@ abstract public class Unit {
 	}
 	
 	// overloading
-	public Unit(String name, int lv, int hp, int pw, int df, int exp, boolean party) {
+	public Unit(String name, int lv, int hp, int pw, int df, boolean party) {
 		super();
 		this.name = name;
 		this.level = lv;
@@ -38,7 +36,6 @@ abstract public class Unit {
 		this.hp = hp;
 		this.power = pw;
 		this.defense = df;
-		this.exp = exp;
 		this.party = party;
 		weapon = null;
 		armor = null;
