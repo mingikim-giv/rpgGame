@@ -42,6 +42,32 @@ abstract public class Unit {
 		ring = null;
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	public int getLevel() {
+		return this.level;
+	}
+	public int getMaxHp() {
+		return this.maxHp;
+	}
+	public int getHp() {
+		return this.hp;
+	}
+	public int getPower() {
+		return this.power;
+	}
+	public int getDefense() {
+		return this.defense;
+	}
+	public boolean getParty() {
+		return this.party;
+	}
+	
+	public void setParty(boolean party) {
+		this.party = party;
+	}
+	
 	// setItem
 	public void setItem(Item weapon, Item armor, Item ring) {
 		this.weapon = weapon;
