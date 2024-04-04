@@ -11,8 +11,8 @@ public class Guild {
 	private final int EXIT = 6;
 	
 	private final int PARTY_SIZE = 3;
-	private ArrayList<Player> guildList;
-	private Unit[] partyList;
+	public ArrayList<Player> guildList;
+	public Unit[] partyList;
 	
 	public Guild() {
 		guildList = new ArrayList<>();
@@ -46,7 +46,7 @@ public class Guild {
 	}
 	
 	// printAllStatus
-	private void printAllStatus() { 
+	public void printAllStatus() { 
 		System.out.println("┌──────────────┐");
 		System.out.printf("[골드: %d원]\n", Player.money);
 		System.out.println("─────[길드원]─────");
