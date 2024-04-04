@@ -1,5 +1,7 @@
 package rpgGame;
 
+import java.util.ArrayList;
+
 public class Player extends Unit {
 	public static int money;	// 소지금
 	public static Guild guild;
@@ -26,7 +28,38 @@ public class Player extends Unit {
 		
 	}
 	
+	// guildMenu
 	public void guildMenu() {
 		guild.guildMenu();
+	}
+	
+	// inventoryMenu
+	public void inventoryMenu() {
+		inven.inventoryMenu();
+	}
+	
+	// 길드 리스트 반환
+	public static ArrayList<Player> getGuildList() {
+		return guild.guildList;
+	}
+	
+	// 아이템 리스트 반환
+	public static ArrayList<Item> getItemList() {
+		return inven.itemList;
+	}
+	
+	// 길드원 반환
+	public static Player getGuildUnit(int num) {
+		return guild.getGuild(num);
+	}
+	
+	// 길드 크기 반환
+	public static int getGuildSize() {
+		return guild.guildList.size();
+	}
+	
+	// 아이템 크기 반환
+	public static int getItemSize() {
+		return inven.itemList.size();
 	}
 }
