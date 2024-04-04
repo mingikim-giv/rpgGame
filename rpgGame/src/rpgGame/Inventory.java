@@ -7,7 +7,7 @@ public class Inventory {
 	private final int SALE = 2;
 	private final int EXIT = 3;
 	
-	private ArrayList<Item> itemList;
+	public ArrayList<Item> itemList;
 	
 	public Inventory() {
 		itemList = new ArrayList<>();
@@ -33,6 +33,7 @@ public class Inventory {
 			}
 		}
 	}
+	
 	// printItemList
 	private void printItemList() {
 		System.out.println("─────[아이템 리스트]─────");
@@ -44,6 +45,7 @@ public class Inventory {
 			System.out.println();
 		}
 	}
+	
 	// wear
 	private void wear() {
 		Player.guild.printAllStatus();
@@ -53,6 +55,19 @@ public class Inventory {
 			Player.guild.unitStatus(sel);
 			Player.guild.unitItem(sel);
 			printItemList();
+			
+			int wear = inputNumber("착용할 아이템 번호 [0.뒤로가기]");
+			if(wear == 0) {
+				break;
+			}
+			wear --;
+			
+			if(itemList.get(wear).getKind() == Item.WEAPON) {
+				if(Player.getGuildUnit(wear).getWeapon() != null) {
+					itemList.add(Player.getGuildUnit(wear).getWeapon());
+				}
+				Player.getGuildUnit(wear).setWeapon(itemList.get(sel));
+			}
 		}
 	}
 	// inputNumber
