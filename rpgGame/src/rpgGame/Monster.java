@@ -31,4 +31,7 @@ public class Monster {
 	public void setHp(int hp) { 
 		this.hp = hp;
 	}
+	public void setName(String name) {
+		this.name = name;
+	}
 }
