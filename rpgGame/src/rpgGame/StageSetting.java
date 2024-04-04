@@ -53,7 +53,9 @@ public class StageSetting extends Stage {
 
 	@Override
 	public void init() {
-		
+		unitManager = UnitManager.getInstance();
+		shop = new Shop();
+		fileData = new FileData();
 	}
 	
 	// inputNumber
