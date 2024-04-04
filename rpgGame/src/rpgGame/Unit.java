@@ -63,7 +63,13 @@ abstract public class Unit {
 	public boolean getParty() {
 		return this.party;
 	}
+	public Item getWeapon() {
+		return this.weapon;
+	}
 	
+	public void setWeapon(Item weapon) {
+		this.weapon = weapon;
+	}
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
