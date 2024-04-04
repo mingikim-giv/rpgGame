@@ -37,4 +37,23 @@ public class Guild {
 	public Player getGuild(int num) {
 		return guildList.get(num);
 	}
+	
+	// printAllStatus
+	public void printAllStatus() { 
+		System.out.println("┌──────────────┐");
+		System.out.printf("[골드: %d원]\n", Player.money);
+		System.out.println("─────[길드원]─────");
+		for(int i = 0; i < guildList.size(); i ++) {
+			Player player = guildList.get(i);
+			System.out.printf("[%d번]\n", i+1);
+			System.out.printf("[이름:%s]\n", player.getName());
+			System.out.printf("[레벨:%d]\n", player.getLevel());
+			System.out.printf("[HP:%d/%d]\n", player.getHp(), player.getMaxHp());
+			System.out.printf("[공격력:%d]\n", player.getPower());
+			System.out.printf("[방어력:%d]\n", player.getDefense());
+			System.out.printf("[파티중:%s]\n", player.getParty());
+			System.out.println();
+		}
+		System.out.println("└──────────────┘");
+	}
 }
