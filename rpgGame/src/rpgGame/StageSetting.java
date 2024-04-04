@@ -21,7 +21,7 @@ public class StageSetting extends Stage {
 			System.out.println("③ 인벤토리👛");
 			System.out.println("④ 파일 저장📁");
 			System.out.println("⑤ 파일 로드📁");
-			System.out.println("⑥ 종료");
+			System.out.println("⑥ 뒤로 가기");
 			int sel = inputNumber("메뉴 선택");
 			
 			while(!((sel == GUILDMENU) || (sel == SHOP) || (sel == INVENTORY) || (sel == SAVE) || (sel == LOAD) || (sel == EXIT))) {
@@ -44,7 +44,7 @@ public class StageSetting extends Stage {
 				
 			}
 			else if(sel == EXIT) {
-				GameManager.nextStage = "";
+				GameManager.nextStage = "🏰스톰빌 성 로비🏰";
 				break;
 			}
 		}
