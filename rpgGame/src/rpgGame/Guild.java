@@ -96,13 +96,13 @@ public class Guild {
 				removeUnit();
 			}
 			else if(sel == CHANGE) {
-				
+				partyChange();
 			}
 			else if(sel == LINE_UP) {
-				
+				unitSort();
 			}
 			else if(sel == EXIT) {
-				
+				break;
 			}
 		}
 	}
@@ -188,7 +188,53 @@ public class Guild {
 		System.out.println("└──────────────┘");
 	}
 	
+	// partyChange
+	private void partyChange() {
+		printParty();
+		int partyNum = inputNumber("교체할 번호")-1;
+		
+		printAllStatus();
+		int guildNum = inputNumber("참가할 번호")-1;
+		
+		partyList[partyNum].setParty(false);
+		guildList.get(guildNum).setParty(true);
+		
+		System.out.println("┌──────────────┐");
+		System.out.printf("[이름:%s] ➡️ [이름:%s]", partyList[partyNum].getName(), guildList.get(guildNum).getName());
+		System.out.println("└──────────────┘");
+		// 파티 재정의
+		int n = 0;
+		for(int i = 0; i < guildList.size(); i ++) {
+			if(guildList.get(i).getParty()) {
+				partyList[n] = guildList.get(i);
+				n ++;
+			}
+		}
+		
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
+	// unitSort
+	private void unitSort() {
+		for(int i = 0; i < guildList.size(); i ++) {
+			Player temp = guildList.get(i);
+			int idx = i;
+			for(int j = i; j < guildList.size(); j ++) {
+				if(temp.getLevel() < guildList.get(j).getLevel()) {
+					temp = guildList.get(j);
+					idx = j;
+				}
+			}
+			Player temp2 = guildList.get(idx);
+			guildList.set(idx, guildList.get(i));
+			guildList.set(i, temp2);
+		}
+		printAllStatus();
+	}
 	// inputNumber
 	private int inputNumber(String message) {
 		int number = - 1;
