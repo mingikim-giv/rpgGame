@@ -32,4 +32,9 @@ public class Guild {
 			}
 		}
 	}
+	
+	// getGuild
+	public Player getGuild(int num) {
+		return guildList.get(num);
+	}
 }
