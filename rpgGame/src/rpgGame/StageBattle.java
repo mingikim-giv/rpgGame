@@ -30,7 +30,22 @@ public class StageBattle extends Stage {
 			if(isTurn) {
 				printUnit();
 				if(playerIdx < Player.getGuildSize()) {
-					
+					playerAttack(playerIdx);
+					playerIdx ++;
+				}
+				else {
+					isTurn = !isTurn;
+					playerIdx = 0;
+				}
+			}
+			else if(!isTurn) {
+				if(monIdx < monList.size()) {
+					monAttack(monIdx);
+					monIdx ++;
+				}
+				else {
+					isTurn = !isTurn;
+					monIdx = 0;
 				}
 			}
 		}
@@ -97,5 +112,24 @@ public class StageBattle extends Stage {
 				break;
 			}
 		}
+	}
+	
+	// checkLive
+	private void checkLive() {
+		int num = 0;
+		for(int i = 0; i < Player.getGuildSize(); i ++) {
+			if(Player.getGuildUnit(i).getHp() <= 0) {
+				num ++;
+			}
+		}
+		playerDead = Player.getGuildSize() - num;
+		
+		num = 0;
+		for(int i = 0; i < monList.size(); i ++) {
+			if(monList.get(i).getHp() <= 0) {
+				num ++;
+			}
+		}
+		monDead = monList.size() - num;
 	}
 }
