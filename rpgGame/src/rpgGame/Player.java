@@ -4,13 +4,10 @@ import java.util.ArrayList;
 
 public class Player extends Unit {
 	public static int money;	// 소지금
-	public static Guild guild;
-	public static Inventory inven;
+	public static Guild guild = new Guild();
+	public static Inventory inven = new Inventory();
 	
-	public Player() {
-		guild = new Guild();
-		inven = new Inventory();
-	}
+	public Player() {}
 	
 	public void init() {
 		money = 100000;		// 소지금
