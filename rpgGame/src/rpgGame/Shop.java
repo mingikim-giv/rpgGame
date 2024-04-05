@@ -71,4 +71,27 @@ public class Shop {
 		temp.setPrice(18000);
 		itemList.add(temp);
 	}
+	
+	// shop
+	public void shop() {
+		System.out.println("───────[상점🎪]───────");
+		System.out.println("① 무기⚔️");
+		System.out.println("② 방어구🛡️");
+		System.out.println("③ 장신구💍");
+		System.out.println("④ 뒤로 가기");
+	}
+	
+	// inputNumber
+	private int inputNumber(String message) {
+		int number = -1;
+		
+		try {
+			System.out.println(message + ":");
+			String input = GameManager.scan.next();
+			number = Integer.parseInt(input);
+		} catch (Exception e) {
+			System.out.println("숫자를 입력하세요.");
+		}
+		return number;
+	}
 }
