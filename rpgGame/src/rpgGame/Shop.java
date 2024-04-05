@@ -79,8 +79,39 @@ public class Shop {
 		System.out.println("② 방어구🛡️");
 		System.out.println("③ 장신구💍");
 		System.out.println("④ 뒤로 가기");
+		int sel = inputNumber("메뉴 선택");
+		if(sel == 4) {
+			return;
+		}
+		
+		while(true) {
+			if(sel == Item.WEAPON) {
+				System.out.println("───────[무기⚔️]───────");
+			}
+			else if(sel == Item.ARMOR) {
+				System.out.println("───────[방어구🛡️]───────");
+			}
+			else if(sel == Item.RING) {
+				System.out.println("───────[장신구💍]───────");
+			}
+		}
+		
 	}
 	
+	// printItem
+	private void printItem(int kind) {
+		int cnt = 0;
+		for(int i = 0; i < itemList.size(); i ++) {
+			if(itemList.get(i).getKind() != kind) {
+				continue;
+			}
+			System.out.printf("[%d번]", i+1);
+			System.out.printf("[이름:%s]", itemList.get(i).getName());
+			System.out.printf("[능력:%d]", itemList.get(i).getPower());
+			System.out.printf("[가격:%d]\n", itemList.get(i).getPrice());
+			cnt ++;
+		}
+	}
 	// inputNumber
 	private int inputNumber(String message) {
 		int number = -1;
