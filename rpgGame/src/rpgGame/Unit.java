@@ -83,7 +83,10 @@ abstract public class Unit {
 		this.ring = ring;
 	}
 	public void setHp(int hp) {
-		this.hp = hp;
+		this.hp += hp;
+		if(this.hp < 0) {
+			this.hp = 0;
+		}
 	}
 	public void setParty(boolean party) {
 		this.party = party;
