@@ -7,7 +7,7 @@ public class StageBattle extends Stage {
 	private final int SKILL = 2;
 	
 	private UnitManager unitManager;
-	private ArrayList<Monster> monList = null;
+	private ArrayList<Monster> monList;
 	
 	private int monDead;
 	private int playerDead;
@@ -19,6 +19,7 @@ public class StageBattle extends Stage {
 		unitManager = UnitManager.getInstance();
 		monDead = 0;
 		playerDead = 0;
+		monList = null;
 	}
 	
 	@Override
