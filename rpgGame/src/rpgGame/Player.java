@@ -29,7 +29,7 @@ public class Player extends Unit {
 			wizardSkill(target);
 		}
 		else if(this.getName().equals("밀사")) {
-			
+			ConfessorSkill();
 		}
 	}
 	
@@ -59,9 +59,34 @@ public class Player extends Unit {
 				System.out.printf("[%s]를 처치했습니다.\n", target.getName());
 			}
 		}
-		
 	}
 	
+	// ConfessorSkill
+	private void ConfessorSkill() {
+		System.out.println("황금 나무의 치유✝️");
+		ArrayList<Player> player = UnitManager.getInstance().getPlayer();
+		for(int i = 0; i < player.size(); i ++) {
+			Player play = player.get(i);
+			
+			if(play.getHp() == 0) {
+				return;
+			}
+			
+			int heal = this.getPower();
+			if (play.getHp() + heal > play.getMaxHp()) {
+				heal = play.getMaxHp() - play.getHp();
+			}
+			
+			play.setHp(heal);
+			System.out.printf("%s(이)가 %d회복 중..❤️‍🩹\n", play.getName(), heal);
+
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	// guildMenu
 	public void guildMenu() {
 		guild.guildMenu();
