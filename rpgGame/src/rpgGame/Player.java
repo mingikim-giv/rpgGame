@@ -37,11 +37,11 @@ public class Player extends Unit {
 	private void warriorSkill(Monster target) {
 		System.out.println("사자 베기🔪🩸");
 		target.setHp(this.getPower() * -2);
-		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), (this.getPower() * -2));
+		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), (this.getPower() * 2));
 		
 		if(target.getHp() <= 0) {
 			target.setHp(0);
-			System.out.printf("[%s]를 처치했습니다.\n", target.getName());
+			System.out.printf("[%s](을)를 처치했습니다.\n", target.getName());
 		}
 	}
 	
@@ -51,12 +51,12 @@ public class Player extends Unit {
 		ArrayList<Monster> mon = UnitManager.getInstance().getMonster();
 		for(int i = 0; i < mon.size(); i ++) {
 			Monster monster = mon.get(i);
-			monster.setHp(monster.getHp() - (this.getPower() / 2));
-			System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), (this.getPower() / 2));
+			monster.setHp(monster.getHp() - this.getPower() / 2);
+			System.out.printf("[%s](이)가 몬스터 전체에게 %d의 데미지를 입힌다.\n", this.getName(), (this.getPower() / 2));
 			
-			if(target.getHp() <= 0) {
-				target.setHp(0);
-				System.out.printf("[%s]를 처치했습니다.\n", target.getName());
+			if(monster.getHp() <= 0) {
+				monster.setHp(0);
+				System.out.printf("[%s](을)를 처치했습니다.\n", monster.getName());
 			}
 		}
 	}
