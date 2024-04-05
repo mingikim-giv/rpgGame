@@ -66,8 +66,17 @@ public class StageBattle extends Stage {
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
+		unitManager.monsterList.clear();
+		unitManager.ranMonster(4);
 		
+		unitManager.player = null;
+		unitManager.player = new Player();
+		
+		monList = null;
+		monList = unitManager.monsterList;
+		
+		monDead = monList.size();
+		playerDead = Player.getGuildSize();
 	}
 	
 	// printUnit
