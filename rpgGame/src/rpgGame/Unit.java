@@ -83,10 +83,7 @@ abstract public class Unit {
 		this.ring = ring;
 	}
 	public void setHp(int hp) {
-		this.hp += hp;
-		if(this.hp < 0) {
-			this.hp = 0;
-		}
+		this.hp = hp;
 	}
 	public void setParty(boolean party) {
 		this.party = party;
@@ -152,11 +149,11 @@ abstract public class Unit {
 	
 	// attack
 	public void attack(Monster target) {
-		target.setHp(target.getHp() - power);
+		target.setHp(target.getHp() - this.power);
 		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", name, target.getName(), this.power);
 		
 		if(target.getHp() <= 0) {
-			System.out.printf("[%s](를)을 처치했습니다.\n", target.getName());
+			System.out.printf("[%s](을)를 처치했습니다.\n", target.getName());
 			target.setHp(0);
 		}
 	}
