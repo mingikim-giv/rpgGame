@@ -82,13 +82,13 @@ public class StageBattle extends Stage {
 	
 	// printUnit
 	private void printUnit() {
-		System.out.println("────────[⚔️전투⚔️]────────");
+		System.out.println("─────────────[⚔️전투⚔️]─────────────");
 		System.out.printf("%s : %s\n", playerDead, monDead);
-		System.out.println("───────[🕹️플레이어🕹️]───────");
+		System.out.println("────────────[🕹️플레이어🕹️]────────────");
 		for(int i = 0; i < Player.getGuildSize(); i ++) {
 			Player.getGuildUnit(i).printData();
 		}
-		System.out.println("───────[👾몬스터👾]───────");
+		System.out.println("─────────────[👾몬스터👾]─────────────");
 		for(int i = 0; i < monList.size(); i ++) {
 			monList.get(i).printData();
 		}
@@ -102,7 +102,7 @@ public class StageBattle extends Stage {
 			return;
 		}
 		
-		System.out.println("───────[메뉴 선택]───────");
+		System.out.println("─────────────[메뉴 선택]─────────────");
 		System.out.printf("[%s]|①공격|②스킬\n", play.getName());
 		int sel = GameManager.scan.nextInt();
 		if(sel == ATTACK) {
