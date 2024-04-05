@@ -48,7 +48,19 @@ public class StageBattle extends Stage {
 					monIdx = 0;
 				}
 			}
+			
+			checkLive();
+			if(playerDead <= 0) {
+				System.out.println("😞STAGE FAIL😞");
+				break;
+			}
+			
+			if(monDead <= 0) {
+				System.out.println("🎉STAGE CLEAR🎉");
+				break;
+			}
 		}
+		GameManager.nextStage = "🏰스톰빌 성 로비🏰";
 		return false;
 	}
 
