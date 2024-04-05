@@ -72,8 +72,8 @@ public class Shop {
 		itemList.add(temp);
 	}
 	
-	// shop
-	public void shop() {
+	// store
+	public void store() {
 		System.out.println("───────[상점🎪]───────");
 		System.out.println("① 무기⚔️");
 		System.out.println("② 방어구🛡️");
