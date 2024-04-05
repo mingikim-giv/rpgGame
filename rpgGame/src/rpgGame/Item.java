@@ -29,4 +29,8 @@ public class Item {
 	public int getPrice() {
 		return this.price;
 	}
+	
+	public void setKind(int kind) {
+		this.kind = kind;
+	}
 }
