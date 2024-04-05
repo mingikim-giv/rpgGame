@@ -113,7 +113,7 @@ public class Inventory {
 	}
 	
 	// addItem
-	private void addItem(Item item) {
+	public void addItem(Item item) {
 		itemList.add(item);
 	}
 	
