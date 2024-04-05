@@ -111,6 +111,12 @@ public class Inventory {
 			itemList.remove(sel);
 		}
 	}
+	
+	// addItem
+	private void addItem(Item item) {
+		itemList.add(item);
+	}
+	
 	// inputNumber
 	private int inputNumber(String message) {
 		int number = - 1;
