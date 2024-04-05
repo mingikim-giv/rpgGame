@@ -81,4 +81,21 @@ public class StageBattle extends Stage {
 			
 		}
 	}
+	
+	// monAttack
+	private void monAttack(int idx) {
+		Monster mon = monList.get(idx);
+		
+		if(mon.getHp() <= 0) {
+			return;
+		}
+		
+		while(true) {
+			int index = GameManager.ran.nextInt(Player.getGuildSize());
+			if(Player.getGuildUnit(index).getHp() > 0) {
+				mon.attack(Player.getGuildUnit(idx));
+				break;
+			}
+		}
+	}
 }
