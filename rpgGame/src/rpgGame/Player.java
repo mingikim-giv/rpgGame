@@ -10,10 +10,10 @@ public class Player extends Unit {
 	public Player() {
 		guild = new Guild();
 		inven = new Inventory();
-		money = 100000;		// 소지금
 	}
 	
 	public void init() {
+		money = 100000;		// 소지금
 		guild.setGuild();	// 길드 설정
 	}
 	
@@ -22,14 +22,6 @@ public class Player extends Unit {
 	}
 	public Player(String name, int lv, int maxHp, int pw, int df, boolean party) {
 		super(name, lv, maxHp, pw, df, false);
-	}
-	
-	public int getMoney() {
-		return this.money;
-	}
-	
-	public void setMoney(int money) {
-		this.money = money;
 	}
 	
 	public void skill() {
