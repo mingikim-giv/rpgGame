@@ -107,6 +107,8 @@ public class Inventory {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			Player.money += (itemList.get(sel).getPrice() / 2);
+			itemList.remove(sel);
 		}
 	}
 	// inputNumber
