@@ -113,7 +113,7 @@ public class Shop {
 					if(cnt == selNum) {
 						Player.inven.addItem(item);
 						Player.money -= item.getPrice();
-						System.out.printf("[%s] 구입💰", item.getName());
+						System.out.printf("[%s] 구입💰\n", item.getName());
 						
 						try {
 							Thread.sleep(1000);
