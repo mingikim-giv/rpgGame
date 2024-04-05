@@ -36,23 +36,23 @@ public class Player extends Unit {
 	// warriorSkill
 	private void warriorSkill(Monster target) {
 		System.out.println("사자 베기🔪🩸");
-		target.setHp(this.getPower() * -2);
+		target.setHp(target.getHp() - this.getPower() * 2);
 		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), (this.getPower() * 2));
 		
 		if(target.getHp() <= 0) {
 			target.setHp(0);
 			System.out.printf("[%s](을)를 처치했습니다.\n", target.getName());
 		}
-	}
+	} 
 	
 	// wizardSkill
 	private void wizardSkill(Monster target) {
 		System.out.println("냉기 안개🧊");
 		ArrayList<Monster> mon = UnitManager.getInstance().getMonster();
+		System.out.printf("[%s](이)가 몬스터 전체에게 %d의 데미지를 입힌다.\n", this.getName(), (this.getPower() / 2));
 		for(int i = 0; i < mon.size(); i ++) {
 			Monster monster = mon.get(i);
 			monster.setHp(monster.getHp() - this.getPower() / 2);
-			System.out.printf("[%s](이)가 몬스터 전체에게 %d의 데미지를 입힌다.\n", this.getName(), (this.getPower() / 2));
 			
 			if(monster.getHp() <= 0) {
 				monster.setHp(0);
@@ -72,14 +72,14 @@ public class Player extends Unit {
 				return;
 			}
 			
-			int heal = this.getPower();
+			int heal = this.getPower(); 
 			if (play.getHp() + heal > play.getMaxHp()) {
 				heal = play.getMaxHp() - play.getHp();
 			}
 			
 			play.setHp(heal);
 			System.out.printf("%s(이)가 %d회복 중..❤️‍🩹\n", play.getName(), heal);
-
+			
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
