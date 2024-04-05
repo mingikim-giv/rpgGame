@@ -32,10 +32,10 @@ public class StageSetting extends Stage {
 				unitManager.player.guildMenu();
 			}
 			else if(sel == SHOP) {
-				
+				shop.store();
 			}
 			else if(sel == INVENTORY) {
-				
+				unitManager.player.inventoryMenu();
 			}
 			else if(sel == SAVE) {
 				
