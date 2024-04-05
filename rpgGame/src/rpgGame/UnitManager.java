@@ -36,8 +36,8 @@ public class UnitManager {
 				Object obj = clazz.getDeclaredConstructor().newInstance();
 				
 				Monster temp = (Monster) obj;
-				int hp = GameManager.ran.nextInt(100) + 100;
-		        int pw = GameManager.ran.nextInt(10) + 10;
+				int hp = GameManager.ran.nextInt(100) + 200;
+		        int pw = GameManager.ran.nextInt(10) + 20;
 		        
 		        temp.init(hp, pw);
 		        monsterList.add(temp);
