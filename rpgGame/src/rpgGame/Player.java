@@ -21,10 +21,29 @@ public class Player extends Unit {
 		super(name, lv, maxHp, pw, df, false);
 	}
 	
-	public void skill() {
-		
+	public void skill(Monster target) {
+		if(this.getName().equals("기사")) {
+			warriorSkill(target);
+		}
+		else if(this.getName().equals("마법사")) {
+			
+		}
+		else if(this.getName().equals("밀사")) {
+			
+		}
 	}
 	
+	// warriorSkill
+	private void warriorSkill(Monster target) {
+		System.out.println("사자 베기🔪🩸");
+		target.setHp(this.getPower() * -2);
+		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), (this.getPower() * -2));
+		
+		if(target.getHp() <= 0) {
+			target.setHp(0);
+			System.out.printf("[%s]를 처치했습니다.\n", target.getName());
+		}
+	}
 	// guildMenu
 	public void guildMenu() {
 		guild.guildMenu();
