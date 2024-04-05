@@ -26,7 +26,7 @@ public class Player extends Unit {
 			warriorSkill(target);
 		}
 		else if(this.getName().equals("마법사")) {
-			
+			wizardSkill(target);
 		}
 		else if(this.getName().equals("밀사")) {
 			
@@ -44,6 +44,24 @@ public class Player extends Unit {
 			System.out.printf("[%s]를 처치했습니다.\n", target.getName());
 		}
 	}
+	
+	// wizardSkill
+	private void wizardSkill(Monster target) {
+		System.out.println("냉기 안개🧊");
+		ArrayList<Monster> mon = UnitManager.getInstance().getMonster();
+		for(int i = 0; i < mon.size(); i ++) {
+			Monster monster = mon.get(i);
+			monster.setHp(monster.getHp() - (this.getPower() / 2));
+			System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), (this.getPower() / 2));
+			
+			if(target.getHp() <= 0) {
+				target.setHp(0);
+				System.out.printf("[%s]를 처치했습니다.\n", target.getName());
+			}
+		}
+		
+	}
+	
 	// guildMenu
 	public void guildMenu() {
 		guild.guildMenu();
