@@ -29,7 +29,7 @@ abstract public class Monster {
 	}
 	
 	public void setHp(int hp) { 
-		this.hp = hp;
+		this.hp += hp;
 		if(this.hp < 0) {
 			this.hp = 0;
 		}
