@@ -62,7 +62,7 @@ public class Inventory {
 			}
 			wear --;
 			Item item = itemList.get(wear);
-			Player play = Player.getGuildUnit(wear);
+			Player play = Player.getGuildUnit(sel);
 			// 입력한 아이템이 무기면
 			if(item.getKind() == Item.WEAPON) {
 				// 길드원에게 무기가 없으면 아이템 리스트 추가 후 무기 착용
