@@ -115,7 +115,13 @@ public class StageBattle extends Stage {
 			}
 		}
 		else if(sel == SKILL) {
-			
+			while(true) {
+				int index = GameManager.ran.nextInt(monList.size());
+				if(monList.get(index).getHp() > 0) {
+					play.skill(monList.get(index));
+					break;
+				}
+			}
 		}
 	}
 	
