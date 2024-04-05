@@ -137,7 +137,7 @@ public class Shop {
 			if(item.getKind() != kind) {
 				continue;
 			}
-			System.out.printf("[%d번]", i+1);
+			System.out.printf("[%d번]", cnt+1);
 			System.out.printf("[이름:%s]", item.getName());
 			System.out.printf("[능력:%d]", item.getPower());
 			System.out.printf("[가격:%d]\n", item.getPrice());
