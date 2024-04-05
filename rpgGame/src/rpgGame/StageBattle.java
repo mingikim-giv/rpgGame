@@ -130,7 +130,7 @@ public class StageBattle extends Stage {
 		while(true) {
 			int index = GameManager.ran.nextInt(Player.getGuildSize());
 			if(Player.getGuildUnit(index).getHp() > 0) {
-				mon.attack(Player.getGuildUnit(idx));
+				mon.attack(Player.getGuildUnit(index));
 				break;
 			}
 		}
