@@ -33,4 +33,14 @@ public class Item {
 	public void setKind(int kind) {
 		this.kind = kind;
 	}
+	public void setPower(int power) {
+		this.power = power;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
 }
