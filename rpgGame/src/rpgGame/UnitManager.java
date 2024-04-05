@@ -23,6 +23,16 @@ public class UnitManager {
 		return instance;
 	}
 	
+	// getPlayer
+	public ArrayList<Player> getPlayer() {
+		return this.playList;
+	}
+	
+	// getMonster
+	public ArrayList<Monster> getMonster() {
+		return this.monsterList;
+	}
+	
 	public void init() {
 		player.init();
 	}
