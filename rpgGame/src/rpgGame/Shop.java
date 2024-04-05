@@ -94,6 +94,37 @@ public class Shop {
 			else if(sel == Item.RING) {
 				System.out.println("───────[장신구💍]───────");
 			}
+			
+			printItem(sel);
+			
+			System.out.println("─────────────────────");
+			System.out.printf("[골드: %d원]\n", Player.money);
+			int selNum = inputNumber("구입할 아이템 번호 [0.뒤로가기]");
+			
+			if(selNum == 0) {
+				break;
+			}
+			
+			int cnt = 0;
+			for(int i = 0; i < itemList.size(); i ++) {
+				Item item = itemList.get(i);
+				if(item.getKind() == sel) {
+					cnt ++;
+					if(cnt == selNum) {
+						Player.inven.addItem(item);
+						Player.money -= item.getPrice();
+						System.out.printf("[%s] 구입💰", item.getName());
+						
+						try {
+							Thread.sleep(1000);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						break;
+					}
+				}
+			}
+			
 		}
 		
 	}
@@ -102,13 +133,14 @@ public class Shop {
 	private void printItem(int kind) {
 		int cnt = 0;
 		for(int i = 0; i < itemList.size(); i ++) {
-			if(itemList.get(i).getKind() != kind) {
+			Item item = itemList.get(i);
+			if(item.getKind() != kind) {
 				continue;
 			}
 			System.out.printf("[%d번]", i+1);
-			System.out.printf("[이름:%s]", itemList.get(i).getName());
-			System.out.printf("[능력:%d]", itemList.get(i).getPower());
-			System.out.printf("[가격:%d]\n", itemList.get(i).getPrice());
+			System.out.printf("[이름:%s]", item.getName());
+			System.out.printf("[능력:%d]", item.getPower());
+			System.out.printf("[가격:%d]\n", item.getPrice());
 			cnt ++;
 		}
 	}
