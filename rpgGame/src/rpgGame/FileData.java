@@ -15,6 +15,7 @@ public class FileData {
 	private FileReader fr;
 	private BufferedReader br;
 	
+	// save
 	public void save() throws IOException {
 		unitManager = UnitManager.getInstance();
 		String data = "ELDEN.txt";
@@ -56,7 +57,7 @@ public class FileData {
 				weaponData += item.getPrice();
 				gameData += weaponData;
 			}
-			gameData += "/";
+			gameData += "\n";
 			
 			if(temp.get(i).getArmor() == null) {
 				gameData += temp.get(i).getArmor();
@@ -73,7 +74,7 @@ public class FileData {
 				armorData += item.getPrice();
 				gameData += armorData;
 			}
-			gameData += "/";
+			gameData += "\n";
 			
 			if(temp.get(i).getRing() == null) {
 				gameData += temp.get(i).getRing();
@@ -90,7 +91,7 @@ public class FileData {
 				ringData += item.getPrice();
 				gameData += ringData;
 			}
-			gameData += "/";
+			gameData += "\n";
 		}
 		// 소지한 아이템 개수
 		gameData += Player.getItemSize();
@@ -110,5 +111,61 @@ public class FileData {
 		System.out.println(gameData);
 		fw.write(gameData, 0, gameData.length());
 		fw.close();
+	}
+	
+	// load
+	public void load() throws IOException {
+		String data = "ELDEN.txt";
+		file = new File(data);
+		if(file.exists()) {
+			fr = new FileReader(data);
+			br = new BufferedReader(fr);
+			
+			// 플레이어 소지금
+			String money = br.readLine();
+			Player.money = Integer.parseInt(money);
+			System.out.println(Player.money);
+			
+			// 길드원 수
+			String guildSize = br.readLine();
+			int size = Integer.parseInt(guildSize);
+			Player.guild.guildList.clear();	// 길드원 리스트 초기화
+			System.out.println(size);
+			
+			for(int i = 0; i < size; i ++) {
+				// 이름/레벨/최대체력/공격력/방어력/파티유무
+				String play = br.readLine();
+				String[] playArr = play.split("/");
+				
+				String name = playArr[0];
+				int lv = Integer.parseInt(playArr[1]);
+				int maxHp = Integer.parseInt(playArr[2]);
+				int pw = Integer.parseInt(playArr[3]);
+				int def = Integer.parseInt(playArr[4]);
+				boolean party = Boolean.parseBoolean(playArr[5]);
+				// 길드원 길드리스트 저장
+				Player temp = new Player(name, lv, maxHp, pw, def, party);
+				Player.guild.guildList.add(temp);
+				
+				String itemData = br.readLine();
+				String[] itemArr = itemData.split("/");
+				// 무기 저장
+				if(itemArr[0].equals("null")) {
+					Player.getGuildList().get(i).setWeapon(null);
+				}
+				else {
+					// 종류,이름,능력,가격
+					String[] weapon = itemArr[0].split(",");
+					int kind = Integer.parseInt(weapon[0]);
+					String itemName = weapon[1];
+					int itemPower = Integer.parseInt(weapon[2]);
+					int itemPrice = Integer.parseInt(weapon[3]);
+					
+					Item item = new Item();
+					item.setItem(kind, itemName, itemPower, itemPrice);
+					Player.getGuildList().get(i).setWeapon(item);
+				}
+			}
+		}
 	}
 }
