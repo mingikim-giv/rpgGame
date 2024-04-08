@@ -135,9 +135,30 @@ public class StageBattle extends Stage {
 		
 		while(true) {
 			int index = GameManager.ran.nextInt(Player.getGuildSize());
-			if(Player.getGuildUnit(index).getHp() > 0) {
-				mon.attack(Player.getGuildUnit(index));
-				break;
+			int ranAttack = GameManager.ran.nextInt(3);
+			
+			if(ranAttack != 0) {
+				if(Player.getGuildUnit(index).getHp() > 0) {
+					mon.attack(Player.getGuildUnit(index));
+					break;
+				}
+			}
+			else {
+				if(mon instanceof Malenia) {
+					Malenia mal = (Malenia) mon;
+					mal.skill();
+					break;
+				}
+				else if(mon instanceof Radagon) {
+					Radagon rad = (Radagon) mon;
+					rad.skill();
+					break;
+				}
+				else if(mon instanceof Radahn) {
+					Radahn rah = (Radahn) mon;
+					rah.skill();
+					break;
+				}
 			}
 		}
 	}
