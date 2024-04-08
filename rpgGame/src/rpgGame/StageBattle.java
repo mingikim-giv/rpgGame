@@ -129,6 +129,10 @@ public class StageBattle extends Stage {
 	private void monAttack(int idx) {
 		Monster mon = monList.get(idx);
 		
+		if(mon.getStun()) {
+			return;
+		}
+		
 		if(mon.getHp() <= 0) {
 			return;
 		}
@@ -146,7 +150,7 @@ public class StageBattle extends Stage {
 			else {
 				if(mon instanceof Malenia) {
 					Malenia mal = (Malenia) mon;
-					mal.skill();
+					mal.skill(Player.getGuildUnit(index));
 					break;
 				}
 				else if(mon instanceof Radagon) {
