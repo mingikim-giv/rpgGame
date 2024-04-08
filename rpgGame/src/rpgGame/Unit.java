@@ -131,19 +131,19 @@ abstract public class Unit {
 			System.out.println("[무기:❌]");
 		}
 		else {
-			System.out.printf("[무기:%s]\n", weapon);
+			System.out.printf("[무기:%s]\n", weapon.getName());
 		}
 		if(armor == null) {
 			System.out.println("[방어구:❌]");
 		}
 		else {
-			System.out.printf("[방어구:%s]\n", armor);
+			System.out.printf("[방어구:%s]\n", armor.getName());
 		}
 		if(ring == null) {
 			System.out.println("[장신구:❌]");
 		}
 		else {
-			System.out.printf("[장신구:%s]\n", ring);
+			System.out.printf("[장신구:%s]\n", ring.getName());
 		}
 	}
 	
