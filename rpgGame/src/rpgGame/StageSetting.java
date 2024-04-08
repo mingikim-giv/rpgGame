@@ -47,7 +47,13 @@ public class StageSetting extends Stage {
 				}
 			}
 			else if(sel == LOAD) {
-				
+				try {
+					fileData.load();
+					System.out.println("파일 로드 완료");
+				} catch (Exception e) {
+					System.err.println("파일 로드 실패");
+					e.printStackTrace();
+				}
 			}
 			else if(sel == EXIT) {
 				GameManager.nextStage = "🏰스톰빌 성 로비🏰";
