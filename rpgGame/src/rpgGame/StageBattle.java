@@ -155,12 +155,7 @@ public class StageBattle extends Stage {
 				}
 				else if(mon instanceof Radagon) {
 					Radagon rad = (Radagon) mon;
-					rad.skill();
-					break;
-				}
-				else if(mon instanceof Radahn) {
-					Radahn rah = (Radahn) mon;
-					rah.skill();
+					rad.skill(Player.getGuildUnit(index));
 					break;
 				}
 			}
