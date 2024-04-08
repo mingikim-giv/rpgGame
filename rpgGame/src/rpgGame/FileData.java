@@ -165,6 +165,60 @@ public class FileData {
 					item.setItem(kind, itemName, itemPower, itemPrice);
 					Player.getGuildList().get(i).setWeapon(item);
 				}
+				
+				// 방어구 저장
+				if(itemArr[1].equals("null")) {
+					Player.getGuildList().get(i).setArmor(null);
+				}
+				else {
+					// 종류,이름,능력,가격
+					String[] armor = itemArr[1].split(",");
+					int kind = Integer.parseInt(armor[0]);
+					String itemName = armor[1];
+					int itemPower = Integer.parseInt(armor[2]);
+					int itemPrice = Integer.parseInt(armor[3]);
+					
+					Item item = new Item();
+					item.setItem(kind, itemName, itemPower, itemPrice);
+					Player.getGuildList().get(i).setArmor(item);
+				}
+				
+				// 장신구 저장
+				if(itemArr[2].equals("null")) {
+					Player.getGuildList().get(i).setRing(null);
+				}
+				else {
+					// 종류,이름,능력,가격
+					String[] ring = itemArr[2].split(",");
+					int kind = Integer.parseInt(ring[0]);
+					String itemName = ring[1];
+					int itemPower = Integer.parseInt(ring[2]);
+					int itemPrice = Integer.parseInt(ring[3]);
+					
+					Item item = new Item();
+					item.setItem(kind, itemName, itemPower, itemPrice);
+					Player.getGuildList().get(i).setRing(item);
+				}
+			}
+			
+			String invenSize = br.readLine();
+			System.out.println(invenSize);
+			int ivSize = Integer.parseInt(invenSize);
+			
+			Player.inven.itemList.clear();	// 플레이어 아이템 리스트 초기화
+			
+			for(int i = 0; i < ivSize; i ++) {
+				// 종류,이름,능력,가격
+				String ivData = br.readLine();
+				String[] invenArr = ivData.split(",");
+				int kind = Integer.parseInt(invenArr[0]);
+				String itemName = invenArr[1];
+				int itemPower = Integer.parseInt(invenArr[2]);
+				int itemPrice = Integer.parseInt(invenArr[3]);
+				
+				Item item = new Item();
+				item.setItem(kind, itemName, itemPower, itemPrice);
+				Player.inven.itemList.add(item);
 			}
 		}
 	}
