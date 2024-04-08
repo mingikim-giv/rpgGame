@@ -15,5 +15,9 @@ public class FileData {
 		fw = new FileWriter(data);
 		temp = unitManager.player.getGuildList();
 		String gameData = "";
+		gameData += Player.money;
+		gameData += "\n";
+		gameData += temp.size();
+		gameData += "\n";
 	}
 }
