@@ -11,7 +11,6 @@ abstract public class Unit {
 	private Item weapon;	// 무기
 	private Item armor;		// 갑옷
 	private Item ring;		// 장신구
-	private boolean stun;	// 기절
 	
 	public Unit() {}
 	
@@ -22,7 +21,6 @@ abstract public class Unit {
 		this.hp = hp;
 		this.power = pw;
 		this.defense = df;
-		this.stun = false;
 		party = false;
 		weapon = null;
 		armor = null;
@@ -74,13 +72,7 @@ abstract public class Unit {
 	public Item getRing() {
 		return this.ring;
 	}
-	public boolean getStun() {
-		return this.stun;
-	}
-	
-	public void setStun(boolean stun) {
-		this.stun = stun;
-	}
+
 	public void setWeapon(Item weapon) {
 		this.weapon = weapon;
 	}
