@@ -191,7 +191,7 @@ public class Guild {
 		System.out.println("└──────────────────────────────┘");
 	}
 	
-	// partyChange
+ 	// partyChange
 	private void partyChange() {
 		printParty();
 		int partyNum = inputNumber("교체할 번호")-1;
@@ -238,6 +238,7 @@ public class Guild {
 		}
 		printAllStatus();
 	}
+	
 	// inputNumber
 	private int inputNumber(String message) {
 		int number = - 1;
@@ -251,4 +252,5 @@ public class Guild {
 		}
 		return number;
 	}
+	
 }
