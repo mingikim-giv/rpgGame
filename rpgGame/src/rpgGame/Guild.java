@@ -1,6 +1,7 @@
 package rpgGame;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Guild {
 	private final int LIST = 1;
@@ -128,7 +129,7 @@ public class Guild {
 		// ranStatus
 		int r = GameManager.ran.nextInt(50);
 		int hp = r * 20;
-		int power = r + 5;
+		int power = r + 5;							
 		int defense = r / 2;
 		
 		// playAdd
@@ -211,9 +212,9 @@ public class Guild {
 			if(guildList.get(i).getParty()) {
 				partyList[n] = guildList.get(i);
 				n ++;
-			}	
+			}
 		}
-		
+		guildList.remove(guildList.get(partyNum));
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
