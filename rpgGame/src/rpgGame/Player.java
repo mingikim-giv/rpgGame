@@ -7,7 +7,7 @@ public class Player extends Unit {
 	public static Guild guild = new Guild();
 	public static Inventory inven = new Inventory();
 	
-	public Player() {}
+	public Player() {init();}
 	
 	public void init() {
 		money = 100000;		// 소지금
