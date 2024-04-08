@@ -38,7 +38,13 @@ public class StageSetting extends Stage {
 				unitManager.player.inventoryMenu();
 			}
 			else if(sel == SAVE) {
-				
+				try {
+					fileData.save();
+					System.out.println("파일 저장 완료");
+				} catch (Exception e) {
+					System.err.println("파일 저장 실패");
+					e.printStackTrace();
+				}
 			}
 			else if(sel == LOAD) {
 				
