@@ -20,6 +20,9 @@ public class Guild {
 	
 	// setGuild
 	public void setGuild() {
+		if(guildList.size() > 0)
+			return;
+		
 		guildList.add(new Player("기사", 7, 500, 30, 50));
 		guildList.add(new Player("마법사", 4, 200, 50, 30));
 		guildList.add(new Player("밀사", 10, 300, 20, 30));
@@ -208,7 +211,7 @@ public class Guild {
 			if(guildList.get(i).getParty()) {
 				partyList[n] = guildList.get(i);
 				n ++;
-			}
+			}	
 		}
 		
 		try {
