@@ -5,6 +5,7 @@ abstract public class Monster {
 	private int maxHp;
 	private int power;
 	private String name;
+	private boolean stun;	// 기절
 	
 	public Monster() {}
 	
@@ -13,6 +14,7 @@ abstract public class Monster {
 	    this.hp = maxHp;
 	    this.maxHp = maxHp;
 	    this.power = pw;
+		this.stun = false;
 	}
 	
 	public int getHp() {
@@ -27,7 +29,13 @@ abstract public class Monster {
 	public String getName() {
 		return this.name;
 	}
+	public boolean getStun() {
+		return this.stun;
+	}
 	
+	public void setStun(boolean stun) {
+		this.stun = stun;
+	}
 	public void setHp(int hp) { 
 		this.hp = hp;
 	}
