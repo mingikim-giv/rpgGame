@@ -126,7 +126,7 @@ public class Guild {
 		name += num3[GameManager.ran.nextInt(num3.length)];
 		
 		// ranStatus
-		int r = GameManager.ran.nextInt(8) + 2;
+		int r = GameManager.ran.nextInt(50);
 		int hp = r * 20;
 		int power = r + 5;
 		int defense = r / 2;
