@@ -81,6 +81,7 @@ public class Player extends Unit {
 			System.out.println("스킬 빗나감😞");
 		}
 	}
+	
 	// guildMenu
 	public void guildMenu() {
 		guild.guildMenu();
