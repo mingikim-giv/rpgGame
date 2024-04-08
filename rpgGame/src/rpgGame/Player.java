@@ -29,7 +29,7 @@ public class Player extends Unit {
 			wizardSkill(target);
 		}
 		else if(this.getName().equals("밀사")) {
-			ConfessorSkill();
+			ConfessorSkill(target);
 		}
 	}
 	
@@ -62,29 +62,23 @@ public class Player extends Unit {
 	}
 	
 	// ConfessorSkill
-	private void ConfessorSkill() {
-		System.out.println("황금 나무의 치유✝️");
-		ArrayList<Player> player = UnitManager.getInstance().getPlayer();
-		for(int i = 0; i < player.size(); i ++) {
-			Player play = player.get(i);
-			
-			if(play.getHp() == 0) {
-				return;
-			}
-			
-			int heal = this.getPower(); 
-			if (play.getHp() + heal > play.getMaxHp()) {
-				heal = play.getMaxHp() - play.getHp();
-			}
-			
-			play.setHp(heal);
-			System.out.printf("%s(이)가 %d회복 중..❤️‍🩹\n", play.getName(), heal);
-			
-			try {
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+	private void ConfessorSkill(Monster target) {
+		System.out.println("황금 나무의 은총✝️");
+		target.setHp(target.getHp() - this.getPower());
+		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), this.getPower());
+		
+		if(target.getHp() <= 0) {
+			target.setHp(0);
+			System.out.printf("[%s](을)를 처치했습니다.\n", target.getName());
+		}
+		
+		int stun = GameManager.ran.nextInt(10)+1;
+		if(stun > 5) {
+			System.out.printf("%s님의 스턴명중! %s💤\n", this.getName(), target.getName());
+			target.setStun(true);
+		}
+		else {
+			System.out.println("스킬 빗나감😞");
 		}
 	}
 	// guildMenu
