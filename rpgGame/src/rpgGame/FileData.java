@@ -57,7 +57,7 @@ public class FileData {
 				weaponData += item.getPrice();
 				gameData += weaponData;
 			}
-			gameData += "\n";
+			gameData += "/";
 			
 			if(temp.get(i).getArmor() == null) {
 				gameData += temp.get(i).getArmor();
@@ -74,7 +74,7 @@ public class FileData {
 				armorData += item.getPrice();
 				gameData += armorData;
 			}
-			gameData += "\n";
+			gameData += "/";
 			
 			if(temp.get(i).getRing() == null) {
 				gameData += temp.get(i).getRing();
@@ -100,11 +100,11 @@ public class FileData {
 		for(int i = 0; i < Player.getItemSize(); i ++) {
 			Item item = Player.getItemList().get(i);
 			gameData += item.getKind();
-			gameData += ",";
+			gameData += "/";
 			gameData += item.getName();
-			gameData += ",";
+			gameData += "/";
 			gameData += item.getPower();
-			gameData += ",";
+			gameData += "/";
 			gameData += item.getPrice();
 			gameData += "\n";
 		}
@@ -210,7 +210,7 @@ public class FileData {
 			for(int i = 0; i < ivSize; i ++) {
 				// 종류,이름,능력,가격
 				String ivData = br.readLine();
-				String[] invenArr = ivData.split(",");
+				String[] invenArr = ivData.split("/");
 				int kind = Integer.parseInt(invenArr[0]);
 				String itemName = invenArr[1];
 				int itemPower = Integer.parseInt(invenArr[2]);
