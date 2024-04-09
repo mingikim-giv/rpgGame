@@ -53,8 +53,6 @@ public class StageBattle extends Stage {
 			checkLive();
 			if(playerDead <= 0) {
 				System.out.println("😞STAGE FAIL😞");
-				GameManager system = new GameManager();
-				system.run();
 				break;
 			}
 			
@@ -72,17 +70,18 @@ public class StageBattle extends Stage {
 		unitManager.monsterList.clear();
 		unitManager.ranMonster(4);
 		
-		unitManager.player = null;
-		unitManager.player = new Player();
-		
 		monList = null;
 		monList = unitManager.monsterList;
 		
 		monDead = monList.size();
+		
+		unitManager.player = null;
+		unitManager.player = new Player();
+		
 		checkLive();
 //		playerDead = Player.getGuildSize();
 	}
-	
+
 	// printUnit
 	private void printUnit() {
 		System.out.println("─────────────[⚔️전투⚔️]─────────────");
