@@ -38,7 +38,7 @@
   * README 작성
 
 ## Class Diagram (UML)
-<img src = "\" width = "400px" height = "600px">
+<img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/ELDEN.jpg?raw=true" width = "700px" height = "700px">
 
 ## DEMO
 <img src = "" width = "400px" height = "400px">
