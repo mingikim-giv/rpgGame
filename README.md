@@ -42,7 +42,7 @@
 <img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/ELDEN.jpg?raw=true" width = "700px" height = "700px">
 
 ## Flow Chart
-<img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/flowchart.jpg?raw=true" width = "700px" height = "700px">
+<img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/flowchart.jpg?raw=true" width = "700px" height = "500px">
 
 ## DEMO
 ### 전투 영상
