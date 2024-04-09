@@ -29,7 +29,7 @@ public class Player extends Unit {
 			wizardSkill(target);
 		}
 		else if(this.getName().equals("밀사")) {
-			ConfessorSkill(target);
+			confessorSkill(target);
 		}
 	}
 	
@@ -61,8 +61,8 @@ public class Player extends Unit {
 		}
 	}
 	
-	// ConfessorSkill
-	private void ConfessorSkill(Monster target) {
+	// confessorSkill
+	private void confessorSkill(Monster target) {
 		System.out.println("황금 나무의 은총✝️");
 		target.setHp(target.getHp() - this.getPower());
 		System.out.printf("[%s](이)가 [%s]에게 %d의 데미지를 입힌다.\n", this.getName(), target.getName(), this.getPower());
