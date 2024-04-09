@@ -15,7 +15,10 @@ public class GameManager {
 	public static String nextStage = "";
 	private String curStage = "";
 	
-	public GameManager() {
+	public GameManager() {}
+	
+	// init
+	private void init() {
 		stageList.put("🏰스톰빌 성 정문🏰", new StageTitle());
 		stageList.put("🏰스톰빌 성🏰", new StageBattle());
 		stageList.put("🏰스톰빌 성 로비🏰", new StageLobby());
@@ -53,6 +56,7 @@ public class GameManager {
 	}
 	
 	public void run() {
+		init();
 		while(isRun) {
 			isRun = changeStage();
 			if(isRun == false) {
