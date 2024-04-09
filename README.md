@@ -41,7 +41,7 @@
 ## Class Diagram (UML)
 <img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/ELDEN.jpg?raw=true" width = "700px" height = "700px">
 
-## FLOW CHART
+## Flow Chart
 <img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/flowchart.jpg?raw=true" width = "700px" height = "700px">
 
 ## DEMO
