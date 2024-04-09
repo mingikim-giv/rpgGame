@@ -43,3 +43,6 @@
 ## DEMO
 ### 전투 영상
 <img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/%EC%A0%84%ED%88%AC%EC%98%81%EC%83%81.gif?raw=true" width = "350px" height = "400px">
+
+### 설정 메뉴 영상
+<img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/%EC%84%A4%EC%A0%95.gif?raw=true" width = "350px" height = "400px">
