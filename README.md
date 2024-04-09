@@ -41,4 +41,5 @@
 <img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/ELDEN.jpg?raw=true" width = "700px" height = "700px">
 
 ## DEMO
-<img src = "" width = "400px" height = "400px">
+### 전투 영상
+<img src = "https://github.com/mingikim-giv/rpgGame/blob/master/images/%EC%A0%84%ED%88%AC%EC%98%81%EC%83%81.gif?raw=true" width = "350px" height = "400px">
