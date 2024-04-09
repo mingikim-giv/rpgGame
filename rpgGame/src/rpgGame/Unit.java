@@ -85,13 +85,6 @@ abstract public class Unit {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
-	public void upHp(int hp) {
-		this.hp += hp;
-		
-		if(this.hp > maxHp) {
-			this.hp = maxHp;
-		}
-	}
 	public void setParty(boolean party) {
 		this.party = party;
 	}
