@@ -51,15 +51,19 @@ public class StageBattle extends Stage {
 			}
 			
 			checkLive();
-			if(playerDead <= 0) {
-				System.out.println("😞STAGE FAIL😞");
-				break;
-			}
-			
 			if(monDead <= 0) {
 				System.out.println("🎉STAGE CLEAR🎉");
 				break;
 			}
+			else if(playerDead <= 0) {
+				for(int i = 0 ; i < Player.getGuildSize(); i ++) {
+					Player player = Player.guild.getGuild(i);
+					player.setHp(player.getMaxHp());
+				}
+				System.out.println("😞STAGE FAIL😞");
+				break;
+			}
+			
 		}
 		GameManager.nextStage = "🏰스톰빌 성 로비🏰";
 		return false;
